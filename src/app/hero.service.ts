@@ -96,35 +96,28 @@ export class HeroService {
   }
 
   /**
-   * Handle Http operation that failed.
-   * Let the app continue.
+   * 
    *
-   * @param operation - name of the operation that failed
-   * @param result - optional value to return as the observable result
+   * @param operation 
+   * @param result 
    */
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
-      // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
+   
+      console.error(error); 
 
-      // TODO: better job of transforming error for user consumption
       this.log(`${operation} failed: ${error.message}`);
 
-      // Let the app keep running by returning an empty result.
+      
       return of(result as T);
     };
   }
 
-  /** Log a HeroService message with the MessageService */
+
   private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
   }
 }
 
 
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/
